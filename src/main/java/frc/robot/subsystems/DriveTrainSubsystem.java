@@ -15,15 +15,12 @@ public class DriveTrainSubsystem extends SubsystemBase {
                 new Victor(0),
                 new Victor(1)
         );
-
-        System.out.println("Made");
     }
 
     @Override
     public void periodic() {
-        System.out.println("hi");
-        double forwardBackwardSpeed = xboxController.getLeftX() * 0.7;
-        double turnSpeed = xboxController.getLeftY() * 0.5;
+        double forwardBackwardSpeed = xboxController.getLeftX() * .6;
+        double turnSpeed = xboxController.getLeftY() *.6;
         differentialDrive.arcadeDrive(forwardBackwardSpeed, turnSpeed);
     }
 }
